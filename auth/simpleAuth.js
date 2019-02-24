@@ -1,4 +1,4 @@
-const config = require('../config/config');
+const config = require('../config/appConfig');
 
 const adminUsername = config.ADMIN_USERNAME;
 const adminPassword = config.ADMIN_PASSWORD;

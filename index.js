@@ -1,7 +1,9 @@
 const restify = require('restify');
 const mongoose = require('mongoose');
-const config = require('./config/config');
 const restifyJWT = require('restify-jwt-community');
+
+const config = require('./config/appConfig');
+const logger = require('./config/loggerConfig');
 
 const server = restify.createServer();
 
@@ -16,11 +18,10 @@ server.listen(config.PORT, () => {
 
 const db = mongoose.connection;
 
-// todo: log it
-db.on('error', (err) => console.log(err));
+db.on('error', (err) => logger.error(err));
 
 db.once('open', () => {
     require('./controller/customers')(server);
     require('./controller/auth')(server);
-    console.log('server started on port: '+config.PORT);
+    logger.info(`server started on port: ${config.PORT}`);
 });

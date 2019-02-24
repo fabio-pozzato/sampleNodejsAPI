@@ -1,7 +1,7 @@
 const errors = require('restify-errors');
 const jwt = require('jsonwebtoken');
 
-const config = require('../config/config');
+const config = require('../config/appConfig');
 const auth = require('../auth/simpleAuth');
 
 module.exports = server => {
