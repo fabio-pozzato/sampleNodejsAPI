@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon $NODE_DEBUG_OPTION index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.15",
     "mongoose-timestamp": "^0.6.0",
     "restify": "^8.0.0",
-    "restify-errors": "^6.1.1"
+    "restify-errors": "^6.1.1",
+    "restify-jwt-community": "^1.0.9"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
